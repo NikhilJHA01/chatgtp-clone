@@ -19,14 +19,14 @@
 }
 
 .grid-child {
-  border: 2px solid whitesmoke;
+  border: 2px solid rgb(218, 212, 212);
   border-radius: 15px;
   padding: 10px;
   cursor: pointer;
 }
 
 .grid-child:hover {
-  background-color: whitesmoke;
+  background-color: rgb(219, 211, 211);
   color: #212121;
 }
 
@@ -50,6 +50,8 @@
   font-size: 20px;
   padding: 10px;
   font-family: Poppins;
+  background-color: rgb(218, 212, 212);
+  outline: none;
 }
 
 .action-btn {
@@ -58,6 +60,8 @@
   font-size: 20px;
   margin-top: 20px;
   cursor: pointer;
+  color: black;
+  background-color: rgb(218, 212, 212);
 }
 
 .result-text {

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Translation = ({ doStuff, setInput, result }) => {
+const Translation = ({ doStuff, setInput, result, loading }) => {
   return (
     <div className="translation">
       <textarea
@@ -10,10 +10,11 @@ const Translation = ({ doStuff, setInput, result }) => {
         onChange={(e) => setInput(e.target.value)}
       ></textarea>
       <button className="action-btn" onClick={doStuff}>
-        DO YOU STUFF!
+        DO YOUR STUFF!
       </button>
 
       <h3 className="result-text">{result.length > 0 ? result : ""}</h3>
+      <h3 className="result-text">{loading ? "Generating..." : ""}</h3>
     </div>
   );
 };

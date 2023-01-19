@@ -13,6 +13,7 @@ function App() {
   const [option, setOption] = useState({});
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
 
   console.log(import.meta.env.VITE_OPEN_API_KEY);
   const selectOption = (option) => {
@@ -21,10 +22,11 @@ function App() {
 
   const doStuff = async () => {
     let object = { ...option, prompt: input };
-
+    setLoading(true);
     const response = await openai.createCompletion(object);
 
     setResult(response.data.choices[0].text);
+    setLoading(false);
   };
   console.log(option);
 
@@ -34,7 +36,12 @@ function App() {
       {!Object.values(option).length ? (
         <Options arrayItems={arrayItems} selectOption={selectOption} />
       ) : (
-        <Translation doStuff={doStuff} result={result} setInput={setInput} />
+        <Translation
+          doStuff={doStuff}
+          result={result}
+          setInput={setInput}
+          loading={loading}
+        />
       )}
     </div>
   );
